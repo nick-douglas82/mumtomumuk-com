@@ -1,0 +1,9 @@
+.top-nav {
+    display: flex;
+    align-items: center;
+    margin: 20px 0 10px 0;
+
+    @include mq(large) {
+        margin: 30px 0;
+    }
+}

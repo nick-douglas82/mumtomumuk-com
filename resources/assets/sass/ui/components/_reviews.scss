@@ -1,0 +1,114 @@
+.review {
+    list-style: none;
+    margin-left: 0;
+    display: flex;
+
+    &__wrap {
+        display: flex;
+
+        .review__item {
+            border: 0;
+        }
+    }
+
+    &__link {
+        color: color(text-light);
+        text-decoration: underline;
+        transition: $global-transition;
+        margin-left: 10px;
+
+        @include hocus() {
+            color: color(primary);
+            transition: $global-transition;
+        }
+    }
+
+    &__star {
+        width: 18px;
+        height: 18px;
+        display: block;
+        margin-right: 3px;
+        background-repeat: no-repeat;
+
+        &--full {
+            background-image: url(../images/svg/star-full.svg);
+        }
+
+        &--empty {
+            background-image: url(../images/svg/star-empty.svg);
+        }
+    }
+
+    &__item {
+        border-bottom: 1px solid #d6d6d6;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+
+        @include mq(medium) {
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        &.is-facebook {
+            background-color: #E7F0FC;
+            margin-left: -10px;
+            margin-right: -10px;
+            padding: 30px 20px 30px 20px;
+
+            @include mq(medium) {
+                margin-left: -20px;
+                margin-right: -20px;
+            }
+        }
+    }
+
+    &__avatar {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+
+        @include mq(small) {
+            flex-direction: row;
+            align-items: flex-end;
+        }
+    }
+
+    &__name {
+        font-weight: 600;
+    }
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+
+        @include mq(small) {
+            margin-left: 30px;
+        }
+    }
+
+    &__heading {
+        font-weight: 600;
+        margin-bottom: 30px;
+        @include font(heading-beta);
+    }
+
+    &__textarea {
+        width: 100%;
+        border: 1px solid color(borders);
+        border-radius: $global-border-radius;
+    }
+}
+
+.review-write__wrap {
+
+    @include mq(large) {
+        display: flex;
+        align-items: center;
+    }
+}

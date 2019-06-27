@@ -1,0 +1,67 @@
+.ad__leaderboard {
+    max-width: 728px;
+    max-height: 90px;
+    margin: 50px auto;
+}
+
+.ad__mpu {
+    max-width: 300px;
+    height: 250px;
+    margin-left: auto;
+
+    &--bottom {
+        margin-top: 30px;
+    }
+}
+
+.ad__billboard {
+    max-width: 970px;
+    max-height: 250px;
+    margin: 20px auto 0 auto;
+}
+
+
+.billboard__wrap {
+    height: auto;
+
+    @include mq(large) {
+        height: 250px;
+    }
+}
+
+.advert {
+
+    &--mpu {
+        display: flex;
+        align-items: baseline;
+        margin-bottom: 20px;
+
+        a {
+            max-width: 300px;
+
+            @include mq(medium) {
+                margin-left: auto;
+            }
+        }
+    }
+
+    &--billboard,
+    &--leaderboard {
+        display: flex;
+        align-items: baseline;
+
+        a {
+            max-width: 970px;
+        }
+    }
+
+    &__space {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        a {
+            display: inline-block;
+        }
+    }
+}

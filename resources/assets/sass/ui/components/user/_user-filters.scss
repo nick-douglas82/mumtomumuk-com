@@ -1,0 +1,141 @@
+$border: #dddddd;
+
+.user-filters {
+    margin-top: 33px;
+
+    &.is-active {
+        .date__wrapper {
+            display: block;
+        }
+
+        .user-filters__list {
+            display: block;
+        }
+    }
+
+    &__button {
+        padding: 10px;
+
+        @include mq(large) {
+            display: none;
+        }
+    }
+
+    &__title {
+        font-weight: 800;
+        font-size: 18px;
+        padding-left: 10px;
+        position: relative;
+
+        @include mq(large) {
+            margin-bottom: 20px;
+        }
+
+        &:after {
+            content: '+';
+            font-size: 26px;
+            font-weight: 100;
+            position: absolute;
+            right: 20px;
+            top: -6px;
+
+            @include mq(large) {
+                content: '';
+            }
+        }
+
+        &.active-age {
+            &:after {
+                content: '-';
+            }
+        }
+
+        .is-minimised & {
+            display: none;
+        }
+    }
+
+    .date__wrapper {
+        display: none;
+
+        @include mq(large) {
+            display: block;
+        }
+    }
+
+    &__list {
+        margin-left: 0;
+        list-style: none;
+        display: none;
+
+        @include mq(large) {
+            display: block;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 1px solid $border;
+
+        @include mq(large) {
+            // margin-bottom: 10px;
+            // padding: 10px 10px 20px 10px;
+            padding: 15px 10px 15px 10px;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .is-minimised & {
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &__link {
+        display: block;
+        color: #4A4A4A;
+
+        @include hocus() {
+            text-decoration: none;
+        }
+    }
+
+    &__input {
+        margin-right: 10px;
+    }
+
+    &-item {
+        &__title {
+
+            .is-minimised & {
+                display: none;
+            }
+        }
+    }
+
+    small {
+        padding: 10px;
+        display: block;
+        font-size: 14px;
+
+        .is-minimised & {
+            display: none;
+        }
+    }
+
+    .vdp-datepicker {
+        padding: 0 10px;
+
+        input {
+            width: 100%;
+            border: 0;
+            border-bottom: 1px solid #dddddd;
+        }
+    }
+}

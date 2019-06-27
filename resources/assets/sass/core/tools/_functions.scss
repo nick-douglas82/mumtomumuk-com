@@ -1,0 +1,129 @@
+// =============================================================================
+// Tools / #Functions
+// =============================================================================
+
+// Maps
+// ==============================================
+
+// map-get-deep()
+// ------------------------------------
+
+// Access nested map values.
+// @author Hugo Giraudel (with modifications)
+@function map-get-deep($map, $keys...) {
+    @if map-has-keys-deep($map, $keys...) {
+        @each $key in $keys {
+            $map: map-get($map, $key);
+        }
+
+        @return $map;
+    }
+
+    @warn "Unknown keys of `#{$keys...}` in the defined map";
+    @return null;
+}
+
+// map-has-keys-deep()
+// ------------------------------------
+
+// Check for keys in nested maps.
+// @author Hugo Giraudel
+@function map-has-keys-deep($map, $keys...) {
+    @each $key in $keys {
+        @if not map-has-key($map, $key) {
+            @return false;
+        }
+        $map: map-get($map, $key);
+    }
+
+    @return true;
+}
+
+// Map Shorcuts
+// ==============================================
+
+// color()
+// ------------------------------------
+
+// Function to get color from `$colors` instead of using `map-get`.
+//
+// Usage:
+//
+//   .foo {
+//       color: color(<key>);
+//   }
+//
+@function color($key) {
+    @return map-get-deep($colors, $key);
+}
+
+// z-index()
+// ------------------------------------
+
+// Function to get value from `$z-index` instead of using `map-get`.
+//
+// Usage:
+//
+//   .foo {
+//     z-index: z-index(<key>);
+//   }
+//
+@function z-index($key) {
+    @return map-get-deep($z-index, $key);
+}
+
+// Conversion
+// ==============================================
+
+// convert-to-em()
+// ------------------------------------
+
+// Function to remove the unit from a value to em i.e. strip-unit(30px) would
+// return 1.5em assuming $global-font-size was 20px.
+@function convert-to-em($value, $base-font-size: $global-font-size) {
+    @if unit($value) == "px" {
+        @return (strip-unit($value / $base-font-size)) * 1em;
+    }
+
+    @if unit($value) == "rem" {
+        @return strip-unit($value) * 1em;
+    }
+
+    @else {
+        @warn "Value must be em or px.";
+    }
+}
+
+// reverse()
+// ------------------------------------
+
+// Function to reverse list of values
+//
+// Example:
+//    reverse(1,2,3,4) => 4,3,2,1
+//    reverse(a 1, b 2, c 3) => c 3, b 2, a 1
+//
+@function reverse($list) {
+    $reversed-list: ();
+
+    @for $index from length($list)*-1 through -1 {
+        $reversed-list: append($reversed-list, nth($list, abs($index)), comma);
+    }
+
+    @return $reversed-list;
+}
+
+// strip-unit()
+// ------------------------------------
+
+// Function to remove the unit from a value
+// i.e. strip-unit(20px) would return 20.
+@function strip-unit($num) {
+    @if type_of($num) == number {
+        @return $num / ($num * 0 + 1);
+    }
+
+    @else {
+        @warn "Value must be a number i.e. 12, 24px etc.";
+    }
+}

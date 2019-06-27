@@ -1,0 +1,60 @@
+.form {
+
+    &--login {
+        text-align: center;
+
+
+        .form__input {
+            width: 100%;
+        }
+
+        .form__text {
+            font-size: 22px;
+            font-weight: 800;
+            color: color(text);
+        }
+    }
+
+    h2 {
+        @include font(heading-alpha);
+        font-weight: 800;
+        margin-bottom: 60px;
+        color: #95989A;
+    }
+
+    hr {
+        margin: 30px 0;
+    }
+
+    .form__link {
+        font-weight: 800;
+        color: color(text);
+        color: #95989A;
+
+        &--alt {
+            color: color(primary);
+        }
+    }
+
+    .form__input {
+        height: 54px;
+        border-radius: $global-border-radius;
+        border: 0;
+        border: 1px solid color(borders);
+        padding: 0 10px;
+        color: color(borders);
+        margin-bottom: $unit-l-xs;
+        color: #95989A;
+
+        &:focus {
+            outline: none !important;
+            border:1px solid color(primary);
+            box-shadow: 0 0 10px color(primary);
+        }
+    }
+
+    .btn {
+        width: 100%;
+        padding: 20px 0;
+    }
+}

@@ -1,0 +1,98 @@
+.cards {
+    padding-top: 10px;
+    border-top: 1px solid color(borders);
+
+    a {
+        color: color(text);
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    &__title {
+        font-weight: 500;
+        margin-bottom: $unit-l-s;
+        @include font(heading-beta);
+    }
+
+    &__wrap {
+        justify-content: space-between;
+        margin-bottom: $unit-s-l;
+
+        @include mq(large) {
+            margin-bottom: $unit-l-l;
+        }
+    }
+
+    &.popular-activites,
+    &.popular-services {
+
+        @include mq(large) {
+            max-height: 237px;
+        }
+    }
+}
+
+.card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    // align-self: flex-start;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    @include mq(large) {
+        margin-bottom: 0;
+    }
+
+    &__title {
+        font-family: $global-font-family;
+        font-weight: 600;
+
+        @include mq(large) {
+            margin-bottom: $unit-l-xs;
+        }
+    }
+
+    &__image {
+        display: block;
+        margin-bottom: 5px;
+        border-radius: $global-border-radius;
+        width: 100%;
+
+        @include mq(large) {
+            width: auto;
+            margin-bottom: 14px;
+        }
+    }
+
+    &__datetime {
+        display: flex;
+        align-items: center;
+        color: color(text-light);
+        margin-bottom: 10px;
+
+        .icon {
+            margin-right: 12px;
+        }
+    }
+
+    .rebecca-reviews & {
+        @include mq(large) {
+            @include xy-cell(6, false);
+        }
+    }
+
+    .btn {
+        margin-top: auto;
+
+        @include mq(large) {
+            margin-bottom: 0;
+        }
+    }
+
+}

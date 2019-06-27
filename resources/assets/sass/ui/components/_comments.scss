@@ -1,0 +1,45 @@
+.comments__title {
+    font-weight: 800;
+    font-family: $global-font-family;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid color(borders);
+    @include font(heading-beta);
+}
+
+.comments__sub-title {
+    font-weight: 800;
+    font-family: $global-font-family;
+    margin-bottom: 20px;
+    @include font(heading-charlie);
+}
+
+.comment {
+    margin-bottom: 60px;
+
+    &__header {
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: 40px;
+    }
+
+    &__avatar {
+        border-radius: 50%;
+        width: 70px !important;
+        height: 70px;
+        margin-bottom: 0 !important;
+        margin-right: 20px;
+    }
+
+    &__name {
+        font-weight: 600;
+    }
+
+    &__add {
+        textarea {
+            width: 100%;
+            min-height: 230px;
+        }
+    }
+}

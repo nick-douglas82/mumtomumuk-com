@@ -1,0 +1,32 @@
+// =============================================================================
+// Settings / #COLORS
+// =============================================================================
+
+// Access these colours using:
+//
+//   color($KEY)
+//
+// For example:
+//
+//   .foo {
+//       color: color(brand);
+//   }
+$colors: (
+    primary:          #E57A55,
+    secondary:        #7AC7CC,
+    secondary-blue-l: #7CA4D9,
+    secondary-blue-d: #2B476F,
+    secondary-green:  #1A987D,
+    secondary-pink-d: #F24F6B,
+    secondary-pink-l: #D494BC,
+    social-facebook:  #3B5998,
+    error:            #ff2744,
+    success:          #299934,
+    borders:          #95989A,
+    text-light:       #939393,
+    text:             #4A4A4A,
+    light-grey:       #F5F5F5,
+    dark-grey:        #939393,
+    black:          #000000,
+    white:          #ffffff
+) !default;

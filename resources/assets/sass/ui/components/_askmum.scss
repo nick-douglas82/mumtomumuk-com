@@ -1,0 +1,54 @@
+.askmum {
+
+    &__title {
+        border-radius: $global-border-radius;
+        background-color: color(secondary-pink-d);
+        font-family: $global-font-title-family;
+        padding: 18px 15px;
+        font-weight: 500;
+        margin-bottom: 26px;
+        color: color(white);
+        @include font(heading-sub-home);
+
+        &:first-letter {
+            text-transform: uppercase;
+        }
+    }
+
+    &__question {
+        display: block;
+        margin-bottom: 34px;
+        color: color(text);
+        text-decoration: none;
+        transition: $global-transition;
+        display: flex;
+        align-items: center;
+
+        @include hocus() {
+            text-decoration: none;
+            color: color(secondary-pink-d);
+            transition: $global-transition;
+        }
+
+        &:after {
+            content: '';
+            background-image: url('../images/svg/chevron-right.svg');
+            background-repeat: no-repeat;
+            display: block;
+            width: 10px;
+            height: 16px;
+            flex-shrink: 0;
+            margin-left: auto;
+        }
+    }
+
+    &-question {
+        margin-bottom: 60px;
+
+        &__title {
+            font-weight: 800;
+            font-size: 26px;
+            font-family: $global-font-title-family;
+        }
+    }
+}

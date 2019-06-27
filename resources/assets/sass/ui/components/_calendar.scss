@@ -1,0 +1,353 @@
+.calendar {
+    height: 100%;
+    overflow-y: auto;
+
+    &__header {
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+
+        @include mq(large) {
+            padding: 20px;
+            flex-direction: row;
+        }
+    }
+
+    &__date {
+        font-size: 24px;
+        font-weight: 100;
+
+        @include mq(large) {
+            font-size: 28px;
+        }
+
+        span {
+            font-weight: 800;
+        }
+    }
+
+    &__changer {
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+
+        @include mq(large) {
+            margin-left: 40px;
+        }
+
+        a {
+            margin: 0 5px;
+            color: inherit;
+        }
+    }
+
+    &__content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 0 10px;
+
+        @include mq(large) {
+            flex-direction: row;
+            padding: 0;
+        }
+    }
+
+    &-events__list {
+        margin-left: 0;
+        list-style: none;
+    }
+}
+
+.day {
+    height: 100%;
+    flex: 0 0 auto;
+    flex-basis: calc(100%/7);
+
+    &:last-of-type {
+        .day__time {
+            border-right: 0;
+        }
+    }
+
+    &.is-today {
+
+        .day__time {
+            background-color: #e8e8e8;
+        }
+    }
+
+    &__header {
+        padding: 10px 0;
+        text-align: center;
+
+        @include mq(large) {
+            text-align: right;
+        }
+    }
+
+    &__title {
+        font-size: 26px;
+
+        span {
+            font-weight: 800;
+        }
+    }
+
+    &__time {
+        min-height: 30%;
+        padding-bottom: 20px;
+        display: none;
+
+        &.active {
+            display: block;
+        }
+
+        &.is-active-time {
+            .calendar-events__list {
+                display: block;
+            }
+
+            .title {
+                span {
+                    &:before {
+                        content: "-";
+                    }
+
+                    @include mq(large) {
+                        display: none;
+                    }
+                }
+            }
+
+        }
+
+        @include mq(large) {
+            display: block;
+            border-right: 1px solid grey;
+        }
+
+        .title {
+            padding: 10px;
+            text-transform: uppercase;
+            border-bottom: 1px solid grey;
+            position: relative;
+
+            span {
+                position: absolute;
+                right: 10px;
+                top: -2px;
+                text-align: right;
+                width: 100%;
+
+                &:before {
+                    content: "+";
+                    display: block;
+                    font-size: 30px;
+                }
+
+                @include mq(large) {
+                    display: none;
+                }
+            }
+
+        }
+    }
+}
+
+.calendar-events {
+    &__list {
+        padding: 10px;
+        display: none;
+
+        @include mq(large) {
+            display: block;
+        }
+    }
+
+    &__item {
+        color: color(white);
+        padding: 5px;
+        margin-bottom: 5px;
+        cursor: pointer;
+        position: relative;
+
+        &.is-baby {
+            background-color: color(primary);
+            transition: $global-transition;
+
+            @include hocus() {
+                background-color: darken(color(primary), 10%);
+                transition: $global-transition;
+            }
+        }
+
+        &.is-toddler {
+            background-color: color(secondary-pink-d);
+            transition: $global-transition;
+
+            @include hocus() {
+                background-color: darken(color(secondary-pink-d), 10%);
+                transition: $global-transition;
+            }
+        }
+
+        &.is-all {
+            background-color: color(secondary-pink-l);
+            transition: $global-transition;
+
+            @include hocus() {
+                background-color: darken(color(secondary-pink-l), 10%);
+                transition: $global-transition;
+            }
+        }
+
+        &.is-4years {
+            background-color: color(secondary-blue-l);
+            transition: $global-transition;
+
+            @include hocus() {
+                background-color: darken(color(secondary-blue-l), 10%);
+                transition: $global-transition;
+            }
+        }
+
+        &.is-10years {
+            background-color: color(secondary-blue-d);
+            transition: $global-transition;
+
+            @include hocus() {
+                background-color: darken(color(secondary-blue-d), 10%);
+                transition: $global-transition;
+            }
+        }
+
+        &.is-adult {
+            background-color: color(secondary-green);
+            transition: $global-transition;
+
+            @include hocus() {
+                background-color: darken(color(secondary-green), 10%);
+                transition: $global-transition;
+            }
+        }
+
+        .info-box {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            max-width: 100%;
+            margin-top: -50px;
+            background-color: #F2F2F2;
+            border: 1px solid #95989A;
+            border-radius: $global-border-radius;
+            color: $black;
+            padding: 30px 20px 20px 20px;
+            z-index: 100;
+            box-shadow: 10px 10px 12px -6px rgba(color(black), 0.15);
+
+            &:before, &:after {
+                @include mq(large) {
+                    right: 100%;
+                    top: 50%;
+                    border: solid transparent;
+                    content: " ";
+                    height: 0;
+                    width: 0;
+                    position: absolute;
+                    pointer-events: none;
+                }
+            }
+
+            &:after {
+                @include mq(large) {
+                    border-color: rgba(136, 183, 213, 0);
+                    border-right-color: #F2F2F2;
+                    border-width: 15px;
+                    margin-top: -15px;
+                }
+            }
+
+            &:before {
+                @include mq(large) {
+                    border-color: rgba(194, 225, 245, 0);
+                    border-right-color: #95989A;
+                    border-width: 16px;
+                    margin-top: -16px;
+                }
+            }
+
+            @include mq(large) {
+                position: absolute;
+                left: 80%;
+                top: -72px;
+                width: 100%;
+                max-width: 220px;
+                margin-top: 0;
+            }
+
+            &__title {
+                font-weight: 800;
+                margin-bottom: 10px;
+            }
+
+            &__times {
+                margin-bottom: 10px;
+            }
+
+            .close {
+                position: absolute;
+                top: -10px;
+                right: 10px;
+                font-size: 40px;
+                cursor: pointer;
+
+                @include mq(large) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.current-date {
+    font-size: 16px;
+
+    &.not-logged-in {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    span {
+        margin: 0 10px;
+    }
+
+    i {
+        padding: 5px;
+        border: 1px solid grey;
+        width: 26px;
+        height: 26px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: $global-transition;
+
+        @include hocus() {
+            color: #fff;
+            background-color: darken(color(primary), 10%);
+            transition: $global-transition;
+
+            svg path {
+                fill: white;
+            }
+        }
+
+        &.chevron--prev {
+            transform: rotate(-180deg);
+        }
+    }
+}

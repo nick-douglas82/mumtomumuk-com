@@ -1,0 +1,112 @@
+.place {
+
+    &__gallery {
+        margin-top: 20px;
+
+        @include mq(medium) {
+            margin-top: 0;
+        }
+
+        > .gallery__wrap {
+            width: 100%;
+            height: 186px;
+            position: relative;
+
+            @include mq(small) {
+                height: 215px;
+            }
+
+            @include mq(medium) {
+                height: 195px;
+            }
+
+            @include mq(large) {
+                height: 246px;
+            }
+
+            @include mq(x-large) {
+                height: 256px;
+            }
+
+            i {
+                position: absolute;
+                bottom: 10px;
+                left: 10px;
+
+                &:before {
+                    content: '';
+                    width: 24px;
+                    height: 20px;
+                    display: block;
+                    background-image: url(../images/svg/camera.svg);
+                }
+            }
+        }
+
+        > .gallery__image {
+
+        }
+    }
+
+    &__title {
+        font-weight: 600;
+        margin-bottom: 30px;
+        color: color(text);
+        @include font(heading-charlie);
+
+        @include mq(large) {
+            margin-bottom: 50px;
+        }
+    }
+
+    &__address {
+        margin-bottom: 10px;
+    }
+
+    &__phone {
+        margin-bottom: 30px;
+
+        @include hocus() {
+            text-decoration: none;
+        }
+    }
+
+    &__title,
+    &__address,
+    &__phone {
+        font-family: $global-font-family;
+    }
+
+    &__address,
+    &__phone {
+        color: color(text-light);
+    }
+
+    &__action-buttons {
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid color(borders);
+        margin-top: 20px;
+
+        @include mq(medium) {
+            margin-top: 40px;
+            flex-direction: row;
+        }
+
+        .btn--visit {
+
+            @include mq(medium) {
+                margin-left: 20px;
+            }
+        }
+    }
+
+    &__content {
+        margin-top: 40px;
+
+        p {
+            margin-bottom: 30px;
+            @include font(text-body);
+        }
+    }
+}

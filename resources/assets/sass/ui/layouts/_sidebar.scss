@@ -1,0 +1,7 @@
+.sidebar {
+    @include xy-cell;
+
+    @include mq(medium) {
+        @include xy-cell(4);
+    }
+}

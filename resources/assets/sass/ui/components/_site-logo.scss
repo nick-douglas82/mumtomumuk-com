@@ -1,0 +1,7 @@
+.site-logo {
+    width: 200px;
+
+    @include mq(large) {
+        width: 270px;
+    }
+}

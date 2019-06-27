@@ -1,0 +1,143 @@
+.blog {
+
+    &__title {
+        font-weight: 600;
+        margin-bottom: 20px;
+        @include font(heading-charlie);
+
+        @include mq(medium) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__address {
+        color: color(text-light);
+        font-style: normal;
+        margin-bottom: 14px;
+    }
+
+    &__rating {
+        margin-bottom: 14px;
+    }
+
+    &__target-age {
+        color: color(text-light);
+    }
+
+    &__specs {
+        font-weight: 600;
+        display: flex;
+        flex-direction: column;
+        padding-top: 10px;
+        margin-top: 25px;
+        margin-bottom: 30px;
+        border-top: 1px solid color(borders);
+        color: color(text-light);
+
+        @include mq(medium) {
+            flex-direction: row;
+            margin-bottom: 60px;
+        }
+
+        .icon {
+            margin-right: 5px;
+        }
+    }
+
+    &__by {
+        margin-top: 10px;
+
+        @include mq(medium) {
+            margin-top: 0;
+            margin-left: 40px;
+        }
+    }
+
+    &__content {
+
+        img {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+
+        p {
+            margin-bottom: 20px;
+
+            &:first-of-type {
+                font-weight: 600;
+            }
+
+            &:last-of-type {
+                margin-bottom: 40px;
+            }
+        }
+
+        .flexi-content {
+            img {
+                width: auto;
+            }
+        }
+
+        h3 {
+            font-family: $global-font-family;
+            font-weight: 800;
+        }
+
+        ul {
+            margin-bottom: 20px;
+            margin-left: 40px;
+
+            li {
+                margin-bottom: 5px;
+            }
+        }
+
+        .social-media__list {
+            margin-left: 0;
+        }
+
+        table {
+            margin-bottom: 30px;
+        }
+
+        a {
+            color: color(secondary-pink-l);
+
+            @include hocus() {
+                color: color(secondary-pink-d);
+                text-decoration: underline;
+            }
+
+            &.btn {
+                color: color(white);
+
+                @include hocus() {
+                    color: color(white);
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    &__reviews {
+        margin-bottom: 30px;
+
+        ul {
+            margin-left: 0;
+            margin-bottom: 0;
+
+            li {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__review {
+        display: flex;
+        align-items: center;
+
+        .review__title {
+            min-width: 110px;
+        }
+    }
+}

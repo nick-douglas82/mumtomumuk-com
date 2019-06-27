@@ -1,0 +1,65 @@
+.cross-sell {
+    margin-bottom: 30px;
+
+    @include mq(medium) {
+        margin-bottom: 60px;
+    }
+
+    a {
+        color: color(text);
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    &__list {
+        list-style: none;
+    }
+
+    &__item {
+        &:not(:nth-of-type(1)) {
+            margin-top: 30px;
+        }
+
+        @include mq(medium) {
+
+            &:nth-of-type(2) {
+                margin-top: 0;
+            }
+
+            &:nth-of-type(3),
+            &:nth-of-type(4) {
+                margin-top: 30px;
+            }
+        }
+
+        @include mq(large) {
+            margin-top: 0;
+        }
+
+        @include mq(x-large) {
+            &:nth-of-type(3),
+            &:nth-of-type(4) {
+                margin-top: 0;
+            }
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__heading {
+        font-family: $global-font-family;
+        font-weight: 600;
+        padding-bottom: 20px;
+        @include font(heading-charlie);
+    }
+
+    &__title {
+        font-family: $global-font-family;
+        font-weight: 600;
+        margin-top: 16px;
+    }
+}

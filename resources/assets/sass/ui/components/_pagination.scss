@@ -1,0 +1,107 @@
+.pagination {
+    margin-left: 0;
+    list-style: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-bottom: 30px;
+
+    &__item {
+        &.is-active {
+            .pagination__link {
+                background-color: color(secondary);
+                border-radius: $global-border-radius;
+                color: color(white);
+            }
+        }
+    }
+
+    &__link {
+        color: #939393;
+        width: 55px;
+        height: 55px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 600;
+
+        i {
+            &:before {
+                border-style: solid;
+                border-width: 0.15em 0.15em 0 0;
+                content: '';
+                display: inline-block;
+                left: 0.15em;
+                position: relative;
+                top: 0.15em;
+                transform: rotate(-45deg);
+                height: 1em;
+                width: 1em;
+            }
+        }
+
+        &--prev {
+            i {
+                &:before {
+                    left: 0.25em;
+                    transform: rotate(-135deg);
+                }
+            }
+        }
+
+        &--next {
+            i {
+                &:before {
+                    left: 0;
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+}
+
+.ais-no-results {
+    // margin-bottom: 40px;
+}
+
+.ais-pagination {
+    list-style: none;
+    margin-left: 0;
+    display: flex;
+    margin-top: 20px;
+
+    &.hide {
+        display: none;
+    }
+
+    &__link {
+        display: block;
+        text-align: center;
+        padding: 5px 0;
+        margin-right: 5px;
+        background-color: color(white);
+        width: 28px;
+        transition: all 250ms ease-in-out;
+
+        &:hover {
+            color: color(white);
+            background-color: lighten(color(primary), 20%);
+            text-decoration: none;
+            transition: all 250ms ease-in-out;
+        }
+
+        .ais-pagination__item--active & {
+            color: color(white);
+            background-color: color(primary);
+        }
+    }
+
+    .ais-pagination__item {
+
+        &--disabled {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,15 @@
+/* ==========================================================================
+   Utilities / #Hide
+   ========================================================================== */
+
+.u-hide-visually {
+    @include responsivize() {
+        @include hide-visually();
+    }
+}
+
+.u-hide-completely {
+    @include responsivize() {
+        @include hide-completely();
+    }
+}

@@ -1,0 +1,185 @@
+.listing-filters {
+
+    .filters-button {
+
+        @include mq(large) {
+            display: none;
+        }
+    }
+
+    aside {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        z-index: 100;
+        display: block;
+        background-color: rgba(255, 255, 255, 0.5);
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        @include mq(large) {
+            position: relative;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: auto;
+            background-color: transparent;
+            width: calc(33.33333333% - 1.875rem) !important;
+            margin-left: 0.9375rem !important;
+            margin-right: 0.9375rem !important;
+        }
+    }
+
+    .filter {
+        background-color: #fff;
+        outline-width: 0;
+        left: 100%;
+        width: calc(100% - 50px);
+        transition: transform .195s;
+        z-index: 15000;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        transform: translateX(-100%);
+
+        @include mq(large) {
+            left: 0;
+            width: auto;
+            overflow-y: auto;
+            height: auto;
+            transform: none;
+            position: relative;
+            z-index: 1;
+            transition: none;
+            border: 1px solid color(borders);
+            border-radius: $global-border-radius;
+            background-color: color(light-grey);
+            color: color(text);
+            padding: 26px 14px;
+            margin-bottom: 14px;
+        }
+
+        &__splitter {
+            border-bottom: 10px solid #f5f5f5;
+            margin-bottom: 10px;
+
+            @include mq(large) {
+                border-bottom: 0;
+                margin-bottom: 0;
+            }
+        }
+
+        &__date-pickr {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding: 0 20px;
+
+            @include mq(large) {
+                margin-top: 40px;
+                margin-bottom: 40px;
+                padding: 0;
+            }
+
+            .flatpickr-input {
+                width: 100%;
+                height: 40px;
+                padding: 10px;
+                border: 1px solid #95989a;
+                border-radius: 3px;
+            }
+        }
+
+        &__title {
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-bottom: 10px solid #f5f5f5;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @include mq(large) {
+                padding: 0;
+                border-bottom: 0;
+                margin-bottom: 20px;
+            }
+
+            span {
+                font-size: 16px;
+            }
+
+            &--main {
+                font-size: 24px;
+                display: none;
+
+                @include mq(large) {
+                    display: block;
+                    margin-bottom: 50px;
+                }
+            }
+
+            &--date-pickr {
+                width: 100%;
+                display: block;
+                margin-bottom: 5px;
+            }
+        }
+
+        &__wrap {
+            overflow-y: auto;
+            height: calc(100vh - 75px);
+            padding-bottom: 90px;
+
+            @include mq(large) {
+                padding-bottom: 0;
+                height: 100%;
+                overflow-y: none;
+            }
+        }
+
+        &__list {
+            list-style: none;
+
+            @include mq(large) {
+                margin-left: 0;
+            }
+        }
+
+        &__item {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+
+            input {
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+.view-items__wrap {
+    position: fixed;
+    z-index: 999;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 20px;
+    background: #fff;
+    border-top: 1px solid #eee;
+
+    @include mq(large) {
+        display: none;
+    }
+}
+
+.slide-enter-active {
+    transition: all .3s ease;
+}
+.slide-leave-active {
+    transition: all .3s ease-in-out;
+}
+.slide-enter, .slide-leave-to {
+    transform: translateX(100%);
+}

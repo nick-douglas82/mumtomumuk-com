@@ -1,0 +1,57 @@
+footer {
+    border-top: 1px solid color(borders);
+    display: flex;
+    padding-top: 15px;
+    margin-bottom: 40px;
+
+    .community {
+
+        &__title {
+            font-weight: 600;
+            font-size: 20px;
+        }
+    }
+
+    .social-list {
+        margin-left: 0;
+        list-style: none;
+        display: flex;
+
+        .social-item {
+            width: 35px;
+            height: 35px;
+            margin-right: 10px;
+        }
+
+        a {
+            color: inherit;
+
+            span {
+                text-indent: -9999px;
+                display: block;
+            }
+        }
+    }
+
+    .pages {
+        margin-left: auto;
+
+        ul {
+            margin-left: 0;
+            list-style: none;
+
+            a {
+                color: inherit;
+            }
+
+            li {
+                font-size: 14px;
+
+                &:first-of-type {
+                    font-weight: 600;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

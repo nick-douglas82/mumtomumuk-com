@@ -1,0 +1,70 @@
+.tabs {
+    max-width: 100%;
+    margin-bottom: 30px;
+
+    @include mq(medium) {
+        margin-bottom: 60px;
+    }
+
+    @include mq(medium) {
+        max-width: 65em;
+    }
+
+    > input[type="radio"] {
+        position: absolute;
+        left: -200vw;
+    }
+
+    > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
+    > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
+    > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
+    > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
+    > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
+    > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {
+        display: block;
+    }
+
+    .tab-panel,
+    .tab-visible {
+        display: none;
+        padding: 20px 10px;
+        border-radius: $global-border-radius;
+        border: 1px solid color(borders);
+
+        @include mq(medium) {
+            padding: 40px 20px 20px 20px;
+        }
+    }
+
+    .tab-visible {
+        display: block;
+    }
+
+    > label {
+        position: relative;
+        display: inline-block;
+        padding: 15px 15px;
+        border: 1px solid transparent;
+        border-bottom: 0;
+        cursor: pointer;
+        font-weight: 600;
+        width: 49%;
+        color: color(secondary);
+        @include font(heading-charlie);
+    }
+
+    > input:checked + label {
+        border-color: color(borders);
+        border-bottom: 1px solid color(secondary);
+        margin-bottom: -1px;
+        background-color: color(secondary);
+        color: color(white);
+    }
+
+    .tab__title {
+        font-weight: 600;
+        color: color(text);
+        margin-bottom: 30px;
+        @include font(heading-beta);
+    }
+}

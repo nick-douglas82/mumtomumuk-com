@@ -1,0 +1,25 @@
+.social-media {
+
+    &__list {
+        list-style: none;
+        margin-left: 0;
+        display: flex;
+        margin-bottom: 30px;
+    }
+
+    &__item {
+        &:last-of-type {
+            margin-left: 10px;
+        }
+
+        @include hocus() {
+            opacity: 0.6;
+        }
+    }
+
+    &__title {
+        font-weight: 600;
+        margin-bottom: 10px;
+        font-family: $global-font-family;
+    }
+}

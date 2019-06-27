@@ -1,0 +1,42 @@
+.activity-feed {
+
+    &__header {
+        font-size: 20px;
+        font-weight: 800;
+        padding: 20px;
+        border-bottom: 1px solid $border;
+    }
+
+    &__list {
+        list-style: none;
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    &__item {
+        font-size: 16px;
+
+        &--spacer {
+            border-left: 3px solid color(secondary);
+            height: 22px;
+            margin-left: 5px;
+            margin-top: 3px;
+            margin-bottom: 3px;
+        }
+    }
+
+    &__event {
+        a {
+            color: color(secondary);
+            font-weight: 600;
+        }
+    }
+
+    &__time {
+        align-items: center;
+
+        .icon {
+            margin-right: 5px;
+        }
+    }
+}

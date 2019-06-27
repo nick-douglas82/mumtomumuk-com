@@ -1,0 +1,35 @@
+.site-nav {
+    display: none;
+
+    @include mq(large) {
+        display: block;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid color(borders);
+        padding-bottom: 5px;
+        margin-bottom: 0;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: color(text);
+        text-transform: uppercase;
+        transition: $global-transition;
+        @include font(text-buttons-tabs-nav);
+
+        @include hocus() {
+            color: color(primary);
+            text-decoration: inherit;
+            transition: $global-transition;
+        }
+
+        .is-active & {
+            color: color(primary);
+            text-decoration: inherit;
+            font-weight: 800;
+        }
+    }
+}

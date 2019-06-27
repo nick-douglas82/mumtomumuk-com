@@ -1,0 +1,90 @@
+.mobile {
+
+    &__calendar {
+        width: 25px;
+        height: 25px;
+        fill: #7ca4d9;
+    }
+
+    &__user {
+        width: 25px;
+        height: 25px;
+        fill: #2b476f;
+    }
+
+    &__close {
+        font-size: 60px;
+        position: absolute;
+        right: 20px;
+        line-height: 0.2;
+        margin-left: auto;
+        cursor: pointer;
+    }
+}
+
+.mobile-nav {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    text-align: left;
+    width: 100%;
+    left: 0;
+    height: 100%;
+    background-color: rgba(color(white), 100%);
+    z-index: 1000;
+    text-transform: uppercase;
+    transition: all .25s ease-in-out;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        transition: all .25s ease-in-out .25s;
+    }
+
+    &__header {
+        position: relative;
+        display: flex;
+        width: 100%;
+        padding: 40px 20px;
+        max-height: 110px;
+
+        a:first-of-type {
+            margin-right: 20px;
+        }
+    }
+
+    &__item {
+        margin-bottom: 20px;
+        padding: 0 20px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 5px;
+        margin-bottom: 0;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: color(text);
+        text-transform: uppercase;
+        transition: $global-transition;
+        @include font(text-body);
+
+        @include hocus() {
+            color: color(primary);
+            text-decoration: inherit;
+            transition: $global-transition;
+        }
+
+        .is-active & {
+            color: color(primary);
+            text-decoration: inherit;
+            font-weight: 800;
+        }
+    }
+}

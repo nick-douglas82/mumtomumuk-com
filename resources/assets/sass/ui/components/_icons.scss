@@ -1,0 +1,127 @@
+.icon {
+    height: 16px;
+    display: block;
+    background-repeat: no-repeat;
+
+    &--time {
+        width: 16px;
+        background-image: url(../images/svg/clock.svg);
+    }
+
+    &--star {
+        width: 26px;
+        height: 26px;
+        margin-top: -1px;
+        background-image: url(../images/svg/favourite.svg);
+
+        .is-favourite & {
+            background-image: url(../images/svg/favourite_saved.svg);
+        }
+    }
+
+    &--marker {
+        &:before {
+            width: 20px;
+            height: 20px;
+            display: block;
+            content: '';
+            background-image: url(../images/svg/marker.svg);
+            background-repeat: no-repeat;
+        }
+    }
+
+    &--phone {
+        &:before {
+            width: 20px;
+            height: 20px;
+            display: block;
+            content: '';
+            background-image: url(../images/svg/phone.svg);
+            background-repeat: no-repeat;
+        }
+    }
+
+    &--calendar {
+        &:before {
+            width: 20px;
+            height: 20px;
+            display: block;
+            content: '';
+            background-image: url(../images/svg/calendar.svg);
+            background-repeat: no-repeat;
+        }
+
+        &-filled {
+            top: 7px;
+            &:before {
+                width: 20px;
+                height: 20px;
+                display: block;
+                content: '';
+                background-image: url(../images/svg/calendar_filled.svg);
+                background-repeat: no-repeat;
+            }
+        }
+    }
+
+    &--twitter {
+        height: 34px;
+        display: block;
+
+        &:before {
+            width: 34px;
+            height: 34px;
+            display: block;
+            content: '';
+            background-image: url(../images/svg/twitter.svg);
+            background-repeat: no-repeat;
+        }
+    }
+
+    &--facebook {
+        height: 34px;
+        display: block;
+
+        &:before {
+            width: 34px;
+            height: 34px;
+            display: block;
+            content: '';
+            background-image: url(../images/svg/facebook.svg);
+            background-repeat: no-repeat;
+        }
+    }
+
+    &--filter-down {
+        height: 14px;
+        display: block;
+
+        &:before {
+            width: 27px;
+            height: 14px;
+            display: block;
+            content: '';
+            background-image: url(../images/svg/filter-down.svg);
+            background-repeat: no-repeat;
+        }
+    }
+
+    &--user {
+        &:before {
+            width: 20px;
+            height: 20px;
+            display: block;
+            content: '';
+            background-image: url(../images/svg/user.svg);
+            background-repeat: no-repeat;
+        }
+    }
+}
+
+.has-icon {
+    display: flex;
+
+    &:before {
+        margin-right: 5px;
+    }
+}

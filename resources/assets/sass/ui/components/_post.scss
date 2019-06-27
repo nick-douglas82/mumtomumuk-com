@@ -1,0 +1,140 @@
+.posts {
+
+    &__title {
+        font-weight: 800;
+        margin-bottom: 30px;
+        @include font(heading-beta, small);
+
+        @include mq(medium) {
+            margin-bottom: 60px;
+            @include font(heading-beta);
+        }
+
+        &.with-border {
+            border-top: 2px solid color(borders);
+            padding-top: 10px;
+        }
+    }
+
+    &__filters {
+        width: 100%;
+        background-color: color(light-grey);
+        padding: 30px 0;
+        border-left: 1px solid;
+        border-right: 1px solid;
+        border-bottom: 1px solid;
+        border-color: color(borders);
+        position: absolute;
+        z-index: 100;
+        border-bottom-left-radius: $global-border-radius;
+        border-bottom-right-radius: $global-border-radius;
+
+        .filters__list {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .filters__item {
+            font-weight: 600;
+            padding-bottom: 10px;
+            width: 100%;
+            cursor: pointer;
+            padding: 5px 20px;
+
+            @include hocus() {
+                background-color: darken(color(light-grey), 10%);
+            }
+        }
+    }
+
+    &__filter {
+        padding: 10px;
+        width: 100%;
+        border: 1px solid color(borders);
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        border-radius: $global-border-radius;
+        @include font(heading-charlie);
+
+        &.isactive {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+
+            i {
+                transform: rotate(180deg);
+            }
+        }
+
+        i {
+            margin-left: auto;
+        }
+    }
+}
+
+.filters {
+    position: relative;
+}
+
+.blog__listing {
+    .cell {
+        margin-bottom: 30px;
+    }
+}
+
+.post {
+    height: 100%;
+    border: 1px solid color(borders);
+
+    a {
+        color: color(text);
+
+        @include hocus() {
+            text-decoration: none;
+        }
+    }
+
+    &__image-wrap {
+        position: relative;
+
+        .post__image {
+            width: 100%;
+        }
+    }
+
+    &__tag {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 8px 10px;
+        text-transform: uppercase;
+        font-weight: 800;
+        font-family: $global-font-title-family;
+        @include font(text-buttons-tabs-nav);
+
+        @include mq(medium) {
+            padding: 10px 14px;
+        }
+
+        &--blog {
+            background-color: color(secondary-pink-l);
+            color: color(white);
+        }
+    }
+
+    &__content-wrap {
+        padding: 20px 20px 30px 20px;
+    }
+
+    &__title {
+        font-weight: 600;
+        font-family: $global-font-family;
+        margin-bottom: 20px;
+        @include font(heading-charlie, small);
+
+        @include mq(large) {
+            @include font(heading-charlie);
+        }
+    }
+}

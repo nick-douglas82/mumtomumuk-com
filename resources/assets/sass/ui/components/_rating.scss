@@ -1,0 +1,36 @@
+.star-rating {
+    display: flex;
+    margin-left: auto;
+
+    .star-rating__star {
+        display: inline-block;
+        padding: 3px;
+        vertical-align: middle;
+        line-height: 1;
+        color: #ABABAB;
+        transition: color .2s ease-out;
+        cursor: pointer;
+        width: 30px;
+
+        .star-icon {
+            fill: none;
+            stroke: #95989a;
+        }
+
+        &.is-selected {
+            .star-icon {
+                fill: #919191;
+            }
+        }
+    }
+
+    input[type="radio"]{
+        display: none;
+    }
+}
+
+.rating__title {
+    font-weight: 600;
+    font-size: 20px;
+    margin-right: 20px;
+}

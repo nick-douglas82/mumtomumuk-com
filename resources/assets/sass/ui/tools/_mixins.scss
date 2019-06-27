@@ -1,0 +1,5 @@
+@mixin nav_buttons() {
+    text-transform: uppercase;
+    font-family: $global-font-title-family;
+    @include font(buttons-nav);
+}

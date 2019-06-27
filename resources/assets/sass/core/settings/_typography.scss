@@ -1,0 +1,101 @@
+/*
+|--------------------------------------------------------------------------
+| Settings / #Typography
+|--------------------------------------------------------------------------
+|
+*/
+
+// Our brand and project font-sizes and line-heights are held in maps.
+// Access these using `@include font()` from `tools/typography`.
+$text: (
+  heading-alpha: (
+    small: (
+      font-size: 30px,
+      line-height: 1.2
+    ),
+    large: (
+      font-size: 44px,
+      line-height: 1.136
+    )
+  ),
+  heading-alpha-home: (
+    small: (
+      font-size: 36px,
+      line-height: 1.22
+    ),
+    large: (
+      font-size: 44px,
+      line-height: 1.181
+    )
+  ),
+  heading-beta: (
+    small: (
+      font-size: 26px,
+      line-height: 1.38
+    ),
+    large: (
+      font-size: 30px,
+      line-height: 1.2
+    )
+  ),
+  heading-charlie: (
+    small: (
+      font-size: 18px,
+      line-height: 1.181
+    ),
+    large: (
+      font-size: 22px,
+      line-height: 1.181
+    )
+  ),
+  heading-sub-home: (
+    small: (
+      font-size: 24px,
+      line-height: 1.181
+    ),
+    large: (
+      font-size: 26px,
+      line-height: 1.181
+    )
+  ),
+  heading-sub: (
+    small: (
+      font-size: 16px,
+      line-height: 1.25
+    ),
+    large: (
+      font-size: 16px,
+      line-height: 1.25
+    )
+  ),
+  text-body: (
+    small: (
+      font-size: 16px,
+      line-height: 1.5
+    ),
+    large: (
+      font-size: 16px,
+      line-height: 1.5
+    )
+  ),
+  text-details: (
+    small: (
+      font-size: 16px,
+      line-height: 1.25
+    ),
+    large: (
+      font-size: 16px,
+      line-height: 1.25
+    )
+  ),
+  text-buttons-tabs-nav: (
+    small: (
+      font-size: 14px,
+      line-height: 1
+    ),
+    large: (
+      font-size: 14px,
+      line-height: 1
+    )
+  )
+) !default;

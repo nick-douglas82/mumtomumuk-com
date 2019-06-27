@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="384.5 1670.5 17.379 17.379">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #919191;
+        stroke-linecap: round;
+      }
+
+      .cls-2 {
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <g id="Symbol_9" data-name="Symbol 9" transform="translate(-589 967)">
+    <g id="Group_188" data-name="Group 188" transform="translate(972 702)">
+      <path id="Path_565" data-name="Path 565" class="cls-1" d="M8.189,0A8.189,8.189,0,1,1,0,8.189,8.189,8.189,0,0,1,8.189,0Z" transform="translate(2 2)"/>
+      <path id="Path_564" data-name="Path 564" class="cls-2" d="M74.3,27.8v5.632h4.731" transform="translate(-64.156 -22.894)"/>
+    </g>
+  </g>
+</svg>

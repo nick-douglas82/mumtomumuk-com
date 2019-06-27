@@ -1,0 +1,108 @@
+.landing {
+    margin-top: 30px;
+    justify-content: center;
+    margin-bottom: 60px;
+
+    @include mq(large) {
+        margin-bottom: 0;
+    }
+
+    &:first-of-type {
+        margin-top: 40px;
+    }
+
+    &__text {
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 80px;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include mq(large) {
+            max-width: 80%;
+        }
+    }
+
+    h2 {
+        font-size: 32px;
+        padding-top: 22px;
+        margin-bottom: 60px;
+        font-weight: 500;
+        border-top: 1px solid color(borders);
+        font-family: $global-font-title-family;
+    }
+
+    .cell {
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    &-header__title {
+        text-transform: uppercase;
+        font-weight: 800;
+        margin-top: 40px;
+        text-align: center;
+        font-family: $global-font-title-family;
+        font-size: 40px;
+        color: #9a9a9a;
+
+        @include mq(large) {
+            margin-top: 90px;
+            @include font(heading-alpha-home);
+        }
+
+        &--sub {
+            text-align: center;
+            line-height: 1.2;
+            margin-top: 20px;
+            font-size: 26px;
+            color: color(secondary);
+
+            @include mq(large) {
+                line-height: 1.5;
+                font-size: 30px;
+                margin-top: 0;
+            }
+        }
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    .location {
+
+        &:hover {
+            .location__title {
+                color: color(primary) !important;
+            }
+        }
+
+        &.not-active {
+            filter: grayscale(100%);
+
+            .location__title {
+                color: #b9b9b9 !important;
+            }
+        }
+    }
+
+    .location__title {
+        margin-top: 18px;
+        margin-bottom: 30px;
+        font-weight: 800;
+        font-size: 20px;
+        color: color(text);
+        text-align: center;
+
+        @include mq(large) {
+            text-align: left;
+        }
+    }
+}

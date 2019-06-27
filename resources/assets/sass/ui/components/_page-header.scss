@@ -1,0 +1,77 @@
+.page-header {
+
+    &--home {
+        margin-top: 20px;
+        margin-bottom: 40px;
+
+        @include mq(large) {
+            margin-top: $unit-l-l;
+            margin-bottom: $unit-l-l;
+        }
+    }
+
+    &--subpage {
+        background-color: color(secondary);
+        font-weight: 800;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-top: 30px;
+        margin-bottom: 40px;
+        border-radius: $global-border-radius;
+
+        @include mq(medium) {
+            padding-top: 30px;
+            padding-bottom: 40px;
+            margin-bottom: 50px;
+        }
+    }
+
+    &--listing {
+        margin-bottom: 0;
+
+        @include mq(large) {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__title {
+        font-family: $global-font-title-family;
+        margin-bottom: 0;
+
+        .page-header--home & {
+            text-align: center;
+            color: color(text);
+            text-transform: uppercase;
+            font-weight: 800;
+            @include font(heading-alpha-home, small);
+
+            @include mq(large) {
+                @include font(heading-alpha-home, large);
+            }
+        }
+
+        .page-header--subpage & {
+            color: color(white);
+            font-weight: 500;
+            padding: 0 20px;
+            @include font(heading-alpha, small);
+
+            @include mq(large) {
+                padding: 0 40px;
+                @include font(heading-alpha, large);
+            }
+        }
+    }
+
+    &__sub-title {
+        text-align: center;
+        color: color(primary);
+        padding: 0 60px;
+        @include font(heading-sub-home, small);
+
+        @include mq(large) {
+            padding: 0;
+            @include font(heading-sub-home, large);
+        }
+    }
+}

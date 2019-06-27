@@ -1,0 +1,44 @@
+/*
+|--------------------------------------------------------------------------
+| Core
+|--------------------------------------------------------------------------
+|
+*/
+
+// Settings
+@import "settings/all";
+
+// Tools
+@import "tools/all";
+
+// Foundation Grid
+// @import "node_modules/foundation-sites/scss/util/util";
+// @import "node_modules/foundation-sites/scss/xy-grid/xy-grid";
+@import 'node_modules/foundation-sites/scss/foundation';
+@include foundation-xy-grid-classes;
+
+// Generic
+@import "generic/box-sizing";
+@import "node_modules/normalize.css/normalize";
+@import "generic/reset";
+@import "generic/overflow";
+@import "generic/vertical-rhythm";
+
+// Elements
+@import "elements/page";
+@import "elements/typography";
+@import "elements/forms";
+@import "elements/links";
+@import "elements/tables";
+@import "elements/images";
+
+// Objects
+@import "objects/container";
+@import "objects/grid";
+@import "objects/list-bare";
+@import "objects/list-block";
+@import "objects/list-inline";
+
+// Utilities
+@import "utilities/clearfix";
+@import "utilities/hide";

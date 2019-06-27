@@ -1,0 +1,60 @@
+.close {
+    &__button {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 0;
+        left: -50px;
+        border: 0;
+        border-radius: 0;
+        background-color: color(primary);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        @include mq(large) {
+            display: none;
+        }
+
+        .close {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            span {
+                background-color: #fff;
+                width: 30px;
+                height: 3px;
+                display: block;
+
+                &:first-of-type {
+                    transform: rotate(45deg);
+                    position: relative;
+                    top: 3px;
+                }
+
+                &:last-of-type {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+
+    &--modal {
+        display: flex;
+        left: initial;
+        right: 0;
+        background-color: #fff;
+
+        .close {
+            span {
+                background-color: #000;
+            }
+        }
+    }
+}

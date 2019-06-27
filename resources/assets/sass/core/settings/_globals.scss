@@ -1,0 +1,50 @@
+// =============================================================================
+// Settings / #GLOBALS
+// =============================================================================
+
+// Global Typography Settings
+// ==============================================
+
+$global-font-size: 16px !default;
+$global-line-height: 23px !default;
+
+$global-font-family: "sofia-pro",sans-serif !default;
+$global-font-title-family: "brandon-grotesque",sans-serif !default;
+
+
+// Global Spacing Settings
+// ==============================================
+
+$global-spacing-unit: 20px !default;
+$global-spacing-unit-tiny: round(0.25 * $global-spacing-unit);
+$global-spacing-unit-small: round(0.5 * $global-spacing-unit);
+$global-spacing-unit-large: round(2 * $global-spacing-unit);
+
+
+// Global Container Settings (Foundation)
+// ==============================================
+
+$global-width: 1200px !default;
+
+
+// Global Border Settings
+// ==============================================
+
+$global-border-width: 1px !default;
+$global-border-radius: 3px !default;
+
+$-zf-zero-breakpoint: small !default;
+
+// Global Settings (Foundation)
+// ==============================================
+$global-flexbox: true !default;
+
+// Global transition Settings
+// ==============================================
+$global-transition: all .25s ease-in-out;
+
+// Global Left and Right from Foundation
+// ==============================================
+$global-text-direction: ltr !default;
+$global-left: if($global-text-direction == rtl, right, left);
+$global-right: if($global-text-direction == rtl, left, right);

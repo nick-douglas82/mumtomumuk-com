@@ -1,0 +1,41 @@
+.pips {
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        margin: 0;
+    }
+
+    &__item {
+        background-color: color(primary);
+        color: color(white);
+        padding: 5px 30px 5px 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        position: relative;
+        transition: $global-transition;
+        cursor: pointer;
+
+        @include hocus() {
+            background-color: color(dark-grey);
+            transition: $global-transition;
+
+            &:after {
+                color: color(secondary);
+                transition: $global-transition;
+            }
+        }
+
+        &:after {
+            content: '\D7';
+            margin-left: 10px;
+            font-size: 30px;
+            position: absolute;
+            top: -2px;
+            right: 7px;
+            line-height: 1;
+            transition: $global-transition;
+        }
+    }
+}

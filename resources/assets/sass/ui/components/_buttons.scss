@@ -1,0 +1,160 @@
+.btn {
+    font-size: 14px;
+    font-weight: 800;
+    color: color(white);
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border: 0;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    font-family: $global-font-title-family;
+    border-radius: $global-border-radius;
+    transition: $global-transition;
+
+    @include mq(medium) {
+        width: auto;
+        display: inline-block;
+        margin: 20px 0;
+    }
+
+    &:disabled {
+        background-color: #e8e8e8;
+        color: #b3b3b3;
+        cursor: not-allowed;
+
+        &:hover {
+            background-color: #e8e8e8;
+            color: #b3b3b3;
+            cursor: not-allowed;
+        }
+    }
+
+    span {
+        font-weight: 300;
+    }
+
+    &--primary {
+        background-color: color(primary);
+
+        &:hover {
+            text-decoration: none;
+            background-color: color(secondary);
+            transition: $global-transition;
+        }
+
+        &:focus {
+            text-decoration: none;
+            background-color: color(primary);
+            transition: $global-transition;
+        }
+    }
+
+    &--secondary {
+        background-color: color(secondary);
+
+        &:hover {
+            text-decoration: none;
+            background-color: color(primary);
+            transition: $global-transition;
+        }
+
+        &:focus {
+            text-decoration: none;
+            background-color: color(secondary);
+            transition: $global-transition;
+        }
+    }
+
+    &--account {
+        background-color: color(secondary-blue-d);
+
+        @include hocus() {
+            text-decoration: none;
+            background-color: lighten(color(secondary-blue-d), 10%);
+            transition: $global-transition;
+        }
+    }
+
+    &--planner {
+        background-color: color(secondary-blue-l);
+
+        @include hocus() {
+            text-decoration: none;
+            background-color: lighten(color(secondary-blue-l), 10%);
+            transition: $global-transition;
+        }
+    }
+
+    &--facebook {
+        background-color: color(social-facebook);
+
+        @include hocus() {
+            text-decoration: none;
+            background-color: lighten(color(social-facebook), 10%);
+            transition: $global-transition;
+        }
+    }
+
+    &--alt {
+        background-color: color(secondary-blue-d);
+
+        @include hocus() {
+            text-decoration: none;
+            background-color: lighten(color(secondary-blue-d), 10%);
+            transition: $global-transition;
+        }
+    }
+
+    &--posts {
+        background-color: color(secondary-pink-l);
+
+        &:hover {
+            text-decoration: none;
+            background-color: color(secondary-pink-d);
+            transition: $global-transition;
+        }
+
+        &:focus {
+            text-decoration: none;
+            background-color: color(secondary-pink-d);
+            transition: $global-transition;
+        }
+    }
+
+    &.is-square {
+        border-radius: 0;
+    }
+
+    &.is-short {
+        width: 100%;
+        padding: 14px 20px !important;
+
+        @include mq(large) {
+            width: auto !important;
+        }
+    }
+
+    &.is-full {
+        width: 100%;
+    }
+
+    &.is-favourite {
+        background-color: color(secondary);
+    }
+
+    &.has-icon {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        padding: 10px 35px 10px 55px;
+
+        .icon {
+            position: absolute;
+            left: 10px;
+        }
+    }
+}
